@@ -1,7 +1,7 @@
+import mimetypes
 from .conversions import NoOpConversion, PngToPdfConversion, \
     JpegToPdfConversion, GifToPdfConversion, TiffToPdfConversion, \
-    TextToPdfConversion
-import mimetypes
+    TextToPdfConversion, DocxToPdfConversion
 
 
 class FileConverter(object):
@@ -10,6 +10,9 @@ class FileConverter(object):
 
         source_mimetype = mimetypes.guess_type(source_path)[0]
 
+        if source_mimetype is None:
+            return None
+
         cls = {
             'application/pdf': NoOpConversion,
             'image/jpeg': JpegToPdfConversion,
@@ -17,6 +20,7 @@ class FileConverter(object):
             'image/gif': GifToPdfConversion,
             'image/tiff': TiffToPdfConversion,
             'text/plain': TextToPdfConversion,
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document': DocxToPdfConversion,
         }[source_mimetype]
 
 

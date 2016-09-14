@@ -3,7 +3,7 @@ from fileconversions import FileConverter, FileFormats
 from fileconversions.conversions.conversion import Conversion
 from fileconversions.conversions import NoOpConversion, PngToPdfConversion, \
     JpegToPdfConversion, GifToPdfConversion, TiffToPdfConversion, \
-    TextToPdfConversion
+    TextToPdfConversion, DocxToPdfConversion
 
 
 class TestConverter(unittest.TestCase):
@@ -60,4 +60,9 @@ class TestConverter(unittest.TestCase):
     def test_getting_text_to_pdf_conversion(self):
         self.assertGettingConversion(
             'hello.txt', FileFormats.PDF, TextToPdfConversion
+        )
+
+    def test_getting_docx_to_pdf_conversion(self):
+        self.assertGettingConversion(
+            'hello.docx', FileFormats.PDF, DocxToPdfConversion
         )
