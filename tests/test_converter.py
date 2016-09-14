@@ -64,3 +64,28 @@ class TestConverter(unittest.TestCase):
         self.assertGettingConversion(
             'hello.docx', FileFormats.PDF, conversions.DocxToPdf
         )
+
+    def test_getting_doc_to_pdf_conversion(self):
+        self.assertGettingConversion(
+            'hello.doc', FileFormats.PDF, conversions.DocToPdf
+        )
+
+    def test_getting_pptx_to_pdf_conversion(self):
+        self.assertGettingConversion(
+            'hello.pptx', FileFormats.PDF, conversions.PptxToPdf
+        )
+
+    def test_getting_ppt_to_pdf_conversion(self):
+        self.assertGettingConversion(
+            'hello.ppt', FileFormats.PDF, conversions.PptToPdf
+        )
+
+    def test_getting_odt_to_pdf_conversion(self):
+        self.assertGettingConversion(
+            'hello.odt', FileFormats.PDF, conversions.OdtToPdf
+        )
+
+    def test_getting_rtf_to_pdf_conversion(self):
+        self.assertGettingConversion(
+            'hello.rtf', FileFormats.PDF, conversions.RtfToPdf
+        )
