@@ -1,3 +1,6 @@
 from .no_op import NoOpConversion
 from .png_to_pdf_conversion import PngToPdfConversion
 from .jpeg_to_pdf_conversion import JpegToPdfConversion
+from .gif_to_pdf_conversion import GifToPdfConversion
+from .tiff_to_pdf_conversion import TiffToPdfConversion
+from .text_to_pdf_conversion import TextToPdfConversion

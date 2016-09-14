@@ -1,5 +1,6 @@
 from .conversions import NoOpConversion, PngToPdfConversion, \
-    JpegToPdfConversion
+    JpegToPdfConversion, GifToPdfConversion, TiffToPdfConversion, \
+    TextToPdfConversion
 import mimetypes
 
 
@@ -11,9 +12,11 @@ class FileConverter(object):
 
         cls = {
             'application/pdf': NoOpConversion,
-            'image/png': PngToPdfConversion,
             'image/jpeg': JpegToPdfConversion,
-
+            'image/png': PngToPdfConversion,
+            'image/gif': GifToPdfConversion,
+            'image/tiff': TiffToPdfConversion,
+            'text/plain': TextToPdfConversion,
         }[source_mimetype]
 
 

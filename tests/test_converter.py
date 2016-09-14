@@ -2,7 +2,8 @@ import unittest
 from fileconversions import FileConverter, FileFormats
 from fileconversions.conversions.conversion import Conversion
 from fileconversions.conversions import NoOpConversion, PngToPdfConversion, \
-    JpegToPdfConversion
+    JpegToPdfConversion, GifToPdfConversion, TiffToPdfConversion, \
+    TextToPdfConversion
 
 
 class TestConverter(unittest.TestCase):
@@ -38,5 +39,25 @@ class TestConverter(unittest.TestCase):
 
     def test_getting_jpg_to_pdf_conversion(self):
         self.assertGettingConversion(
+            'hello.jpg', FileFormats.PDF, JpegToPdfConversion
+        )
+
+    def test_getting_jpeg_to_pdf_conversion(self):
+        self.assertGettingConversion(
             'hello.jpeg', FileFormats.PDF, JpegToPdfConversion
+        )
+
+    def test_getting_gif_to_pdf_conversion(self):
+        self.assertGettingConversion(
+            'hello.gif', FileFormats.PDF, GifToPdfConversion
+        )
+
+    def test_getting_tiff_to_pdf_conversion(self):
+        self.assertGettingConversion(
+            'hello.tiff', FileFormats.PDF, TiffToPdfConversion
+        )
+
+    def test_getting_text_to_pdf_conversion(self):
+        self.assertGettingConversion(
+            'hello.txt', FileFormats.PDF, TextToPdfConversion
         )
