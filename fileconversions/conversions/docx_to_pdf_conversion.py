@@ -1,5 +1,5 @@
 from .conversion import Conversion
 
 
-class DocxToPdfConversion(Conversion):
+class DocxToPdf(Conversion):
     pass

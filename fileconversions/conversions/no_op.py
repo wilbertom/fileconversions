@@ -1,7 +1,7 @@
 from .conversion import Conversion
 
 
-class NoOpConversion(Conversion):
+class NoOp(Conversion):
 
     def run(self):
         pass

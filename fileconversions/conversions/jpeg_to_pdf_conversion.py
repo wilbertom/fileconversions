@@ -1,5 +1,5 @@
 from .conversion import Conversion
 
 
-class JpegToPdfConversion(Conversion):
+class JpegToPdf(Conversion):
     pass

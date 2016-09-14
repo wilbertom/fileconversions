@@ -1,8 +1,5 @@
 import mimetypes
-from .conversions import NoOpConversion, PngToPdfConversion, \
-    JpegToPdfConversion, GifToPdfConversion, TiffToPdfConversion, \
-    TextToPdfConversion, DocxToPdfConversion
-
+from . import conversions
 
 class FileConverter(object):
 
@@ -14,13 +11,13 @@ class FileConverter(object):
             return None
 
         cls = {
-            'application/pdf': NoOpConversion,
-            'image/jpeg': JpegToPdfConversion,
-            'image/png': PngToPdfConversion,
-            'image/gif': GifToPdfConversion,
-            'image/tiff': TiffToPdfConversion,
-            'text/plain': TextToPdfConversion,
-            'application/vnd.openxmlformats-officedocument.wordprocessingml.document': DocxToPdfConversion,
+            'application/pdf': conversions.NoOp,
+            'image/jpeg': conversions.JpegToPdf,
+            'image/png': conversions.PngToPdf,
+            'image/gif': conversions.GifToPdf,
+            'image/tiff': conversions.TiffToPdf,
+            'text/plain': conversions.TextToPdf,
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document': conversions.DocxToPdf,
         }[source_mimetype]
 
 

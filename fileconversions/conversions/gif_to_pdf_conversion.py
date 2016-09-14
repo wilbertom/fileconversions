@@ -1,5 +1,5 @@
 from .conversion import Conversion
 
 
-class GifToPdfConversion(Conversion):
+class GifToPdf(Conversion):
     pass

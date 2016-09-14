@@ -1,9 +1,7 @@
 import unittest
 from fileconversions import FileConverter, FileFormats
 from fileconversions.conversions.conversion import Conversion
-from fileconversions.conversions import NoOpConversion, PngToPdfConversion, \
-    JpegToPdfConversion, GifToPdfConversion, TiffToPdfConversion, \
-    TextToPdfConversion, DocxToPdfConversion
+from fileconversions import conversions
 
 
 class TestConverter(unittest.TestCase):
@@ -29,40 +27,40 @@ class TestConverter(unittest.TestCase):
 
     def test_getting_pdf_to_pdf_conversion(self):
         self.assertGettingConversion(
-            'hello.pdf', FileFormats.PDF, NoOpConversion
+            'hello.pdf', FileFormats.PDF, conversions.NoOp
         )
 
     def test_getting_png_to_pdf_conversion(self):
         self.assertGettingConversion(
-            'hello.png', FileFormats.PDF, PngToPdfConversion
+            'hello.png', FileFormats.PDF, conversions.PngToPdf
         )
 
     def test_getting_jpg_to_pdf_conversion(self):
         self.assertGettingConversion(
-            'hello.jpg', FileFormats.PDF, JpegToPdfConversion
+            'hello.jpg', FileFormats.PDF, conversions.JpegToPdf
         )
 
     def test_getting_jpeg_to_pdf_conversion(self):
         self.assertGettingConversion(
-            'hello.jpeg', FileFormats.PDF, JpegToPdfConversion
+            'hello.jpeg', FileFormats.PDF, conversions.JpegToPdf
         )
 
     def test_getting_gif_to_pdf_conversion(self):
         self.assertGettingConversion(
-            'hello.gif', FileFormats.PDF, GifToPdfConversion
+            'hello.gif', FileFormats.PDF, conversions.GifToPdf
         )
 
     def test_getting_tiff_to_pdf_conversion(self):
         self.assertGettingConversion(
-            'hello.tiff', FileFormats.PDF, TiffToPdfConversion
+            'hello.tiff', FileFormats.PDF, conversions.TiffToPdf
         )
 
     def test_getting_text_to_pdf_conversion(self):
         self.assertGettingConversion(
-            'hello.txt', FileFormats.PDF, TextToPdfConversion
+            'hello.txt', FileFormats.PDF, conversions.TextToPdf
         )
 
     def test_getting_docx_to_pdf_conversion(self):
         self.assertGettingConversion(
-            'hello.docx', FileFormats.PDF, DocxToPdfConversion
+            'hello.docx', FileFormats.PDF, conversions.DocxToPdf
         )

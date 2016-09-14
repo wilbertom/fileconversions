@@ -1,5 +1,5 @@
 from .conversion import Conversion
 
 
-class TiffToPdfConversion(Conversion):
+class TiffToPdf(Conversion):
     pass
