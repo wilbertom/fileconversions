@@ -1,5 +1,13 @@
+import os
 import mimetypes
 from . import conversions
+
+
+# use our own mime types file because not all extensions are supported on all
+# linux distros
+mime_types_file = os.path.join(os.path.dirname(__file__), 'mime.types')
+mimetypes.init([mime_types_file])
+
 
 class FileConverter(object):
 
