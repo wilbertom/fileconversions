@@ -1,4 +1,4 @@
-from .helpers import mimetype_for
+from .helpers import mimetype_for, mimetype
 
 
 class FileFormats(object):
@@ -14,3 +14,5 @@ class FileFormats(object):
     PPT  = mimetype_for('ppt')
     ODT  = mimetype_for('odt')
     RTF  = mimetype_for('rtf')
+
+file_format_from_filepath = mimetype

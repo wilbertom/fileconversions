@@ -1,4 +1,5 @@
 from . import conversions
+from .file_formats import FileFormats
 
 
 class FileConverter(object):
