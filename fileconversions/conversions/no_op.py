@@ -3,5 +3,5 @@ from .conversion import Conversion
 
 class NoOp(Conversion):
 
-    def run(self):
+    def __call__(self, source_path):
         pass
