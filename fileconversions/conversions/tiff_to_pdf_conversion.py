@@ -1,18 +1,7 @@
-import subprocess
-from .conversion import Conversion
-from ..helpers import replace_extension
+from .command_conversion import CommandConversion
 
 
-class TiffToPdf(Conversion):
-
-    def __call__(self, source_path):
-        target_path = replace_extension('pdf', source_path)
-
-        rt = subprocess.check_call([
-            'tiff2pdf',
-            source_path,
-            '-o',
-            target_path
-        ])
-
-        return [target_path]
+class TiffToPdf(CommandConversion):
+    command_name = 'tiff2pdf'
+    output_extension = 'pdf'
+    output_flag = True

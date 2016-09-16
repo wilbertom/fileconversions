@@ -1,18 +1,8 @@
-import subprocess
-from .conversion import Conversion
-from ..helpers import replace_extension
+from .command_conversion import CommandConversion
 
 
-class TextToPdf(Conversion):
+class TextToPdf(CommandConversion):
 
-    def __call__(self, source_path):
-        target_path = replace_extension('pdf', source_path)
-
-        rt = subprocess.check_call([
-            'pandoc',
-            source_path,
-            '-o',
-            target_path
-        ])
-
-        return [target_path]
+    command_name = 'pandoc'
+    output_extension = 'pdf'
+    output_flag = True

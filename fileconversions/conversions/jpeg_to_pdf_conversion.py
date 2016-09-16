@@ -1,17 +1,6 @@
-import subprocess
-from .conversion import Conversion
-from ..helpers import replace_extension
+from .command_conversion import CommandConversion
 
 
-class JpegToPdf(Conversion):
-
-    def __call__(self, source_path):
-        target_path = replace_extension('pdf', source_path)
-
-        rt = subprocess.check_call([
-            'convert',
-            source_path,
-            target_path
-        ])
-
-        return [target_path]
+class JpegToPdf(CommandConversion):
+    command_name = 'convert'
+    output_extension = 'pdf'
