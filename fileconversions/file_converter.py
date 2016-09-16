@@ -7,16 +7,16 @@ class FileConverter(object):
     def get_conversion(self, source_format, target_format):
 
         return {
-            'application/pdf': conversions.NoOp,
-            'image/jpeg': conversions.JpegToPdf,
-            'image/png': conversions.PngToPdf,
-            'image/gif': conversions.GifToPdf,
-            'image/tiff': conversions.TiffToPdf,
-            'text/plain': conversions.TextToPdf,
-            'application/vnd.openxmlformats-officedocument.wordprocessingml.document': conversions.DocxToPdf,
-            'application/msword': conversions.DocToPdf,
-            'application/vnd.openxmlformats-officedocument.presentationml.presentation': conversions.PptxToPdf,
-            'application/vnd.ms-powerpoint': conversions.PptToPdf,
-            'application/vnd.oasis.opendocument.text': conversions.OdtToPdf,
-            'application/rtf': conversions.RtfToPdf,
+            FileFormats.PDF: conversions.NoOp,
+            FileFormats.JPEG: conversions.JpegToPdf,
+            FileFormats.PNG: conversions.PngToPdf,
+            FileFormats.GIF: conversions.GifToPdf,
+            FileFormats.TIFF: conversions.TiffToPdf,
+            FileFormats.TXT: conversions.TextToPdf,
+            FileFormats.DOCX: conversions.DocxToPdf,
+            FileFormats.DOC: conversions.DocToPdf,
+            FileFormats.PPTX: conversions.PptxToPdf,
+            FileFormats.PPT: conversions.PptToPdf,
+            FileFormats.ODT: conversions.OdtToPdf,
+            FileFormats.RTF: conversions.RtfToPdf,
         }[source_format]()
