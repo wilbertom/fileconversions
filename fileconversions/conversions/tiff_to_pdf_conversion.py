@@ -15,4 +15,4 @@ class TiffToPdf(Conversion):
             target_path
         ])
 
-        return target_path
+        return [target_path]

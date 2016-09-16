@@ -14,4 +14,4 @@ class PngToPdf(Conversion):
             target_path
         ])
 
-        return target_path
+        return [target_path]
