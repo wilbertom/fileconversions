@@ -1,5 +1,5 @@
 import unittest
-from fileconversions import FileConverter, FileFormats
+from fileconversions import ConversionEngine, FileFormats
 from fileconversions.conversions.conversion import Conversion
 from fileconversions import conversions
 
@@ -9,7 +9,7 @@ class TestConverter(unittest.TestCase):
 
     def setUp(self):
         super(TestConverter, self).setUp()
-        self.converter = FileConverter()
+        self.engine = ConversionEngine()
 
     def assertIsSubClass(self, c1, c2):
         if not issubclass(c1, c2):
@@ -22,7 +22,7 @@ class TestConverter(unittest.TestCase):
         self.assertIsSubClass(cls, Conversion)
 
     def assertGettingConversion(self, source_path, file_format, conversion_cls):
-        conversion = self.converter.get_conversion(source_path, FileFormats.PDF)
+        conversion = self.engine.get_conversion(source_path, FileFormats.PDF)
         self.assertIsConversion(conversion, conversion_cls)
 
     def test_getting_pdf_to_pdf_conversion(self):

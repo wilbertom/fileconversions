@@ -2,10 +2,9 @@ from . import conversions
 from .file_formats import FileFormats
 
 
-class FileConverter(object):
+class ConversionEngine(object):
 
     def get_conversion(self, source_format, target_format):
-
         return {
             FileFormats.PDF: conversions.NoOp,
             FileFormats.JPEG: conversions.JpegToPdf,
